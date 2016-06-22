@@ -1,10 +1,30 @@
 
-<h1>Welcome to my Blog!</h1>
+<header id="main_header">
+<span class="logo_style1">Blog</span> <span class="logo_style2">silo</span>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="/articles">Articles</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+  </nav>
+</header>
 
+
+<div class="wrapper">
+  <div class="arrow-stem"></div>
+  <div class="arrow-head"></div>
+</div>
+<li class="add_new_link">
 <%= link_to "ADD NEW ARTICLE", new_article_path(@articles) %>
+</li>
 
+<div class="articles">
 <% @article.each do |article| %>
-  <h3><%= article.title %>, <%= article.author %></h3>
-  <p><%= article.body %></p>
-  <%= link_to "View Article", article_path(article) %> 
-<% end %>
+  <article class="article_body">
+    <h3><%= link_to article.title, article_path(article) %>, <%= link_to article.author, article_path(article) %></h3>
+    <p><%= article.body %></p>
+
+  </article>
+  <% end %>
+</div>

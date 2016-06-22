@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'articles' => 'articles#index' #need more explanation on this
+  get '/' => 'articles#index' #need more explanation on this
   resources :articles
 
   # The priority is based upon order of creation: first created -> highest priority.
